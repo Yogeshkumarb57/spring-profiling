@@ -1,6 +1,9 @@
 package com.spring.boot.profiling.dto;
 
+import com.spring.boot.profiling.entity.Specification;
+
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 public class ProductDTO implements Serializable{
 
@@ -9,6 +12,28 @@ public class ProductDTO implements Serializable{
     private String productCategory;
     private Long price;
     private String manufacturingDate;
+    private Specification specification;
+    private String orderId;
+    private String orderDate;
+    private BigDecimal orderValue;
+
+    public ProductDTO(){}
+
+    public ProductDTO(String productName, String productCategory, Long price, String manufacturingDate, Specification specification) {
+        this.productName = productName;
+        this.productCategory = productCategory;
+        this.price = price;
+        this.manufacturingDate = manufacturingDate;
+        this.specification = specification;
+    }
+
+    public Specification getSpecification() {
+        return specification;
+    }
+
+    public void setSpecification(Specification specification) {
+        this.specification = specification;
+    }
 
     public Integer getProductId() {
         return productId;
@@ -42,6 +67,38 @@ public class ProductDTO implements Serializable{
         this.price = price;
     }
 
+    public String getManufacturingDate() {
+        return manufacturingDate;
+    }
+
+    public void setManufacturingDate(String manufacturingDate) {
+        this.manufacturingDate = manufacturingDate;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public BigDecimal getOrderValue() {
+        return orderValue;
+    }
+
+    public void setOrderValue(BigDecimal orderValue) {
+        this.orderValue = orderValue;
+    }
+
     @Override
     public String toString() {
         return "ProductDTO{" +
@@ -49,15 +106,11 @@ public class ProductDTO implements Serializable{
                 ", productName='" + productName + '\'' +
                 ", productCategory='" + productCategory + '\'' +
                 ", price=" + price +
-                ", manufacturingDate=" + manufacturingDate +
+                ", manufacturingDate='" + manufacturingDate + '\'' +
+                ", specification=" + specification +
+                ", orderId='" + orderId + '\'' +
+                ", orderDate='" + orderDate + '\'' +
+                ", orderValue=" + orderValue +
                 '}';
-    }
-
-    public String getManufacturingDate() {
-        return manufacturingDate;
-    }
-
-    public void setManufacturingDate(String manufacturingDate) {
-        this.manufacturingDate = manufacturingDate;
     }
 }

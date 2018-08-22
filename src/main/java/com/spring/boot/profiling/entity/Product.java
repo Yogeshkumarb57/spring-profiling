@@ -11,7 +11,8 @@ public class Product {
     private ProductCategory productCategory;
     private Long price;
     private Date manufacturingDate;
-
+    private Specification specification;
+    private Order order;
 
     public Integer getId() {
         return id;
@@ -45,17 +46,6 @@ public class Product {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", productCategory=" + productCategory +
-                ", price=" + price +
-                ", manufacturingDate=" + manufacturingDate +
-                '}';
-    }
-
     public Product() {
     }
 
@@ -75,4 +65,40 @@ public class Product {
     }
 
 
+    public Specification getSpecification() {
+        return specification;
+    }
+
+    public Product(String name, ProductCategory productCategory, Long price, Date manufacturingDate, Specification specification) {
+        this.name = name;
+        this.productCategory = productCategory;
+        this.price = price;
+        this.manufacturingDate = manufacturingDate;
+        this.specification = specification;
+    }
+
+    public void setSpecification(Specification specification) {
+        this.specification = specification;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", productCategory=" + productCategory +
+                ", price=" + price +
+                ", manufacturingDate=" + manufacturingDate +
+                ", specification=" + specification +
+                ", order=" + order +
+                '}';
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
 }
